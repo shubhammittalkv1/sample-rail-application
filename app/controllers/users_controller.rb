@@ -11,10 +11,11 @@
 
 class UsersController < ApplicationController
 def user_params
-      params.require(:name, :email)
+      params.require(:name, :email, :password)
     end
     def show
 @user = User.find(params[:id])
+@title = @user.name
 end
 def new
 @title = "Sign up"
